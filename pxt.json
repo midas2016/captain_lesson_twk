@@ -1,7 +1,7 @@
 {
-    "name": "编程队长体验课",
+    "name": "captain",
     "version": "0.0.0",
-    "description": "编程队长课程包",
+    "description": "captain",
     "dependencies": {
         "core": "*",
         "radio": "*"
