@@ -62,6 +62,9 @@
 	"captain.captain_CmdType.GET_MAC|block":"配对请求",
 	"captain.captain_CmdType.GET_HAND_CMD|block":"uHand:bit命令",
 	"captain.captain_setCarGo|block":"小车 %type| 速度 %speed",
+
+	"captain.captain_getCarType|block":"模式 %type",
+	
 	"captain.captain_CarRunCmdType.STOP|block":"停止",
 	"captain.captain_CarRunCmdType.GO_AHEAD|block":"前进",
 	"captain.captain_CarRunCmdType.GO_BACK|block":"后退",
