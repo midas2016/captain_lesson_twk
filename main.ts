@@ -4,6 +4,13 @@
 //% weight=10 icon="\uf013" color=#2896ff
 namespace captain {
 
+    export enum CaptainCARMODEL {
+        //% block=am
+        Am = 0,
+        //% block=bm
+        Bm = 1,
+    }
+
     export enum captain_Colors {
         //% block="Red"
         Red = 0x01,
