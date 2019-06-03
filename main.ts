@@ -236,7 +236,7 @@ namespace captain {
         let index = findIndexof(handleCmd, "$", 0);
         if (index != -1) {
             let cmd: string = handleCmd.substr(0, index);
-            if (cmd.charAt(0).localeCompare("A") == 0) {
+            if (cmd.charAt(0).compare("A") == 0) {
                 if (cmd.length == 7) {
                     let arg1Int: number = strToNumber(cmd.substr(1, 2));
                     let arg2Int: number = strToNumber(cmd.substr(3, 2));
@@ -258,7 +258,7 @@ namespace captain {
 
                 }
             }
-            if (cmd.charAt(0).localeCompare("C") == 0 && cmd.length == 11) {
+            if (cmd.charAt(0).compare("C") == 0 && cmd.length == 11) {
                 if (lhRGBLightBelt != null) {
                     for (let i = 0; i < 10; i++) {
                         let color = converOneChar(cmd.charAt(i + 1));
@@ -268,24 +268,24 @@ namespace captain {
                     lhRGBLightBelt.show();
                 }
             }
-            if (cmd.charAt(0).localeCompare("M") == 0 && cmd.length == 18) {
+            if (cmd.charAt(0).compare("M") == 0 && cmd.length == 18) {
                 macStr = cmd.substr(1, 17);
                 control.raiseEvent(MESSAGE_MAC, 1);
             }
-            if (cmd.localeCompare("WIFI_S_CONNECT") == 0) {
+            if (cmd.compare("WIFI_S_CONNECT") == 0) {
                 connectStatus = true;
             }
-            if (cmd.localeCompare("WIFI_S_DISCONNECT") == 0) {
+            if (cmd.compare("WIFI_S_DISCONNECT") == 0) {
                 connectStatus = false;
             }
-            if (cmd.charAt(0).localeCompare("S") == 0 && cmd.length == 5) {
+            if (cmd.charAt(0).compare("S") == 0 && cmd.length == 5) {
                 let arg1Int: number = strToNumber(cmd.substr(1, 1));
                 let arg2Str = cmd.substr(2, 3);
-                if (arg2Str.localeCompare("XXX") == 0) {
+                if (arg2Str.compare("XXX") == 0) {
                     return;
                 }
                 let arg2Int: number = 0;
-                if (arg2Str.charAt(0).localeCompare("F") != 0) {
+                if (arg2Str.charAt(0).compare("F") != 0) {
                     arg2Int = strToNumber(arg2Str);
                 }
                 if (arg2Int > 1000)
@@ -324,7 +324,7 @@ namespace captain {
 
     function findIndexof(src: string, strFind: string, startIndex: number): number {
         for (let i = startIndex; i < src.length; i++) {
-            if (src.charAt(i).localeCompare(strFind) == 0) {
+            if (src.charAt(i).compare(strFind) == 0) {
                 return i;
             }
         }
@@ -334,7 +334,7 @@ namespace captain {
     function countChar(src: string, strFind: string): number {
         let cnt: number = 0;
         for (let i = 0; i < src.length; i++) {
-            if (src.charAt(i).localeCompare(strFind) == 0) {
+            if (src.charAt(i).compare(strFind) == 0) {
                 cnt++;
             }
         }
@@ -368,26 +368,26 @@ namespace captain {
     }
 
     function converOneChar(str: string): number {
-        if (str.localeCompare("0") >= 0 && str.localeCompare("9") <= 0) {
+        if (str.compare("0") >= 0 && str.compare("9") <= 0) {
             return parseInt(str);
         }
-        else if (str.localeCompare("A") >= 0 && str.localeCompare("F") <= 0) {
-            if (str.localeCompare("A") == 0) {
+        else if (str.compare("A") >= 0 && str.compare("F") <= 0) {
+            if (str.compare("A") == 0) {
                 return 10;
             }
-            else if (str.localeCompare("B") == 0) {
+            else if (str.compare("B") == 0) {
                 return 11;
             }
-            else if (str.localeCompare("C") == 0) {
+            else if (str.compare("C") == 0) {
                 return 12;
             }
-            else if (str.localeCompare("D") == 0) {
+            else if (str.compare("D") == 0) {
                 return 13;
             }
-            else if (str.localeCompare("E") == 0) {
+            else if (str.compare("E") == 0) {
                 return 14;
             }
-            else if (str.localeCompare("F") == 0) {
+            else if (str.compare("F") == 0) {
                 return 15;
             }
             return -1;
