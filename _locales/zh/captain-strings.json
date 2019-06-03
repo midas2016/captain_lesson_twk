@@ -22,6 +22,8 @@
 	"captain.captain_Colors.None|block":"未识别",
 	"captain.captain_PinIOStatusPinIOStatus.Low|block":"高电平",
 	"captain.captain_PinIOStatus.Hight|block":"低电平",
+	"CaptainCARMODEL.Am|block":"变色龙",
+	"CaptainCARMODEL.Bm|block":"颜色操控",
 	"CaptainRGBColors.Red|block":"红色",
 	"CaptainRGBColors.Orange|block":"橙色",
 	"CaptainRGBColors.Yellow|block":"黄色",

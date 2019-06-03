@@ -895,6 +895,11 @@ namespace captain {
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     }
 
+    //% weight=99 blockId=captain_belt_showLight block="Set|type to %type"
+    export function captain_getCarType(type: CaptainCARMODEL) {
+        return type;
+    }
+
     //% weight=1 blockId=captain_setCarGo block="Set|type to %type|speed to speed"
     export function captain_setCarGo(type: captain_CarRunCmdType, speed: number) {
 
