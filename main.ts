@@ -976,17 +976,17 @@ namespace captain {
         let hsv = rgb2hue(r, g, b);
 
         let t = 0;
-        if (c > 1200 && r > 65 && g > 65 && b > 65) {
+        if (c > 2200 && r > 65 && g > 65 && b > 65) {
             t = 9;
         }
-        else if (c > 400) {
+        else if (c > 800) {
             if ((0 <= hsv && hsv < 10) || (hsv >= 290 && hsv <= 360)) { //红色
                 if (c < 3000) { 
                     t = CaptainTestColors.Red
                 }   
             }
             
-            if (hsv >= 5 && hsv < 80) { //黄色
+            if (hsv >= 8 && hsv < 80) { //黄色
     
                 if (c > 7000) {
                     t = CaptainTestColors.Yellow
@@ -1017,9 +1017,7 @@ namespace captain {
         else if (c > 200 && r > 10 && g > 7 && b > 7 && r < 16.5 && g < 15 && b < 14) {
             t = 10;
         }
-        
-
-        return (color == t)
+        return (color == t);
     }
 
 }
