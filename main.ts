@@ -981,36 +981,16 @@ namespace captain {
         }
         else if (c > 800) {
             if ((0 <= hsv && hsv < 10) || (hsv >= 290 && hsv <= 360)) { //红色
-                if (c < 3000) { 
-                    t = CaptainTestColors.Red
-                }   
-            }
-            
-            if (hsv >= 8 && hsv < 80) { //黄色
-    
-                if (c > 7000) {
-                    t = CaptainTestColors.Yellow
-                }
-    
-                if (c <= 7000) {
-                    t = CaptainTestColors.Green
-                }
-    
-            }
-    
-            if (hsv >= 165 && hsv < 240) {//天蓝
-    
-                if (c > 3000) {
-                    t = CaptainTestColors.TBlue
-                }
-    
-                if (c <= 3000) {
-                    t = CaptainTestColors.Blue
-                }
-                
-            }
-    
-            if (hsv >= 240 && hsv < 290) {//紫色
+                t = CaptainTestColors.Red
+            } else if (hsv >= 10 && hsv < 40) { //黄色
+                t = CaptainTestColors.Yellow
+            } else if (hsv >= 40 && hsv < 165) { //绿色
+                t = CaptainTestColors.Green
+            }else if (hsv >= 165 && hsv < 205) {//天蓝
+                t = CaptainTestColors.TBlue
+            } else if (hsv >= 205 && hsv < 240) {//深蓝
+                t = CaptainTestColors.Blue
+            }else if (hsv >= 240 && hsv < 290) {//紫色
                 t = CaptainTestColors.Purple
             }
         }
