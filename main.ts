@@ -958,7 +958,7 @@ namespace captain {
 	 *  Color sensor return the color.
 	 */
     //% weight=2 blockId=captain_matchCurrentColor block="Current color %rgb"
-    export function captain_matchCurrentColor(color: CaptainTestColors): number {
+    export function captain_matchCurrentColor(color: CaptainTestColors): string {
 
         let c = i2cread(APDS9960_CDATAL) + i2cread(APDS9960_CDATAH) * 256;
         let r = i2cread(APDS9960_RDATAL) + i2cread(APDS9960_RDATAH) * 256;
@@ -976,29 +976,28 @@ namespace captain {
         let hsv = rgb2hue(r, g, b);
 
         let t = 0;
-        return Math.round(c);
-        // if (c > 1200 && r > 65 && g > 65 && b > 65) {
-        //     t = 9;
-        // }
-        // else if (c > 400) {
-        //     if ((0 <= hsv && hsv < 10) || (hsv >= 290 && hsv <= 360)) { //红色
-        //         t = CaptainTestColors.Red
-        //     } else if (hsv >= 10 && hsv < 40) { //黄色
-        //         t = CaptainTestColors.Yellow
-        //     } else if (hsv >= 40 && hsv < 165) { //绿色
-        //         t = CaptainTestColors.Green
-        //     }else if (hsv >= 165 && hsv < 190) {//天蓝
-        //         t = CaptainTestColors.TBlue
-        //     } else if (hsv >= 190 && hsv < 240) {//深蓝
-        //         t = CaptainTestColors.Blue
-        //     }else if (hsv >= 240 && hsv < 290) {//紫色
-        //         t = CaptainTestColors.Purple
-        //     }
-        // }
-        // else if (c > 200 && r > 10 && g > 7 && b > 7 && r < 16.5 && g < 15 && b < 14) {
-        //     t = 10;
-        // }
-        // return (color == t);
+        if (c > 1200 && r > 65 && g > 65 && b > 65) {
+            t = 9;
+        }
+        else if (c > 400) {
+            if ((0 <= hsv && hsv < 10) || (hsv >= 290 && hsv <= 360)) { //红色
+                t = CaptainTestColors.Red
+            } else if (hsv >= 10 && hsv < 40) { //黄色
+                t = CaptainTestColors.Yellow
+            } else if (hsv >= 40 && hsv < 165) { //绿色
+                t = CaptainTestColors.Green
+            }else if (hsv >= 165 && hsv < 190) {//天蓝
+                t = CaptainTestColors.TBlue
+            } else if (hsv >= 190 && hsv < 240) {//深蓝
+                t = CaptainTestColors.Blue
+            }else if (hsv >= 240 && hsv < 290) {//紫色
+                t = CaptainTestColors.Purple
+            }
+        }
+        else if (c > 200 && r > 10 && g > 7 && b > 7 && r < 16.5 && g < 15 && b < 14) {
+            t = 10;
+        }
+        return `${c}H${r}H${g}H${b}H`//(color == t);
     }
 
 }
