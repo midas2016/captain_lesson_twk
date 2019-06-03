@@ -1,0 +1,21 @@
+{
+    "name": "编程队长体验课",
+    "version": "0.0.0",
+    "description": "编程队长课程包",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "CaptainRGBLight.ts",
+        "sendbuffer.asm",
+        "_locales/zh/captain-strings.json",
+        "_locales/zh/captain-jsdoc-strings.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": false
+}
