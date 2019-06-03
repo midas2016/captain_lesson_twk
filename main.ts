@@ -1011,7 +1011,7 @@ namespace captain {
             t = CaptainTestColors.Purple
         }
 
- 
+        return (color == t)
     }
 
 }
