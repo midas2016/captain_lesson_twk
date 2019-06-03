@@ -4,11 +4,11 @@
 //% weight=10 icon="\uf013" color=#2896ff
 namespace captain {
 
-    export enum CaptainCARMODEL {
+    export enum captain_car_model {
         //% block=am
-        Am = 0,
+        Am = 0x00,
         //% block=bm
-        Bm = 1,
+        Bm = 0x01,
     }
 
     export enum captain_Colors {
@@ -903,7 +903,7 @@ namespace captain {
     }
 
     //% weight=99 blockId=captain_getCarType block="Set|type to %type"
-    export function captain_getCarType(type: CaptainCARMODEL) {
+    export function captain_getCarType(type: captain_car_model) {
         return type;
     }
 
