@@ -979,7 +979,13 @@ namespace captain {
 
         if ((0 <= hsv && hsv < 10) || (hsv >= 290 && hsv <= 360)) { //红色
             if (c < 3000) { 
-                t = CaptainTestColors.Red
+                if (r > 65 && g > 65 && b > 65) {
+                    t = 9;
+                } else if (c > 200 && r > 10 && g > 7 && b > 7 && r < 16.5 && g < 15 && b < 14) {
+                    t = 10;
+                } else { 
+                   t = CaptainTestColors.Red 
+                }
             }   
         }
         
