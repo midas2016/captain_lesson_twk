@@ -49,14 +49,12 @@ enum CaptainTestColors {
     //% block="Light 2"
     Light2 = 0x01,
     //% block="All"
-     All = 0x06
+    All = 0x06
 }
 
 enum CaptainLightsBelt {
-        //% block="Light 1"
-        Light1 = 0x00,
-        //% block="All"
-        All = 0x0A
+    //% block="Light 1"
+    Light1 = 0x00
 }
 
 /**

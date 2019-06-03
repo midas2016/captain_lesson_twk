@@ -399,33 +399,23 @@ namespace captain {
     /**
      * Set the color of the colored lights, after finished the setting please perform  the display of colored lights.
      */
-    //% weight=62 blockId=captain_belt_setPixelRGB block="Set light belt|%lightoffset|color to %rgb"
+    //% weight=5 blockId=captain_belt_setPixelRGB block="Set light belt|%lightoffset|color to %rgb"
     export function captain_belt_setPixelRGB(lightoffset: CaptainLightsBelt, rgb: CaptainTestColors) {
         lhRGBLightBelt.setBeltPixelColor2(lightoffset, rgb);
     }
 
     
     //% blockId="captain_setBeltBrightness" block="set brightness %brightness"
-    //% weight=63
+    //% weight=6
     export function captain_setBeltBrightness(brightness: number): void {
         if(lhRGBLightBelt)lhRGBLightBelt.setBrightness(brightness);
     }
 
 
-    /**
-         * Set the brightness of the strip. This flag only applies to future operation.
-         * @param brightness a measure of LED brightness in 0-255. eg: 255
-    */
-    //% blockId="captain_setBrightness" block="set brightness %brightness"
-    //% weight=68
-    export function captain_setBrightness(brightness: number): void {
-        lhRGBLight.setBrightness(brightness);
-    }
-
         /**
      * Display the colored lights, and set the color of the colored lights to match the use. After setting the color of the colored lights, the color of the lights must be displayed.
      */
-    //% weight=65 blockId=captain_belt_showLight block="Show light belt"
+    //% weight=4 blockId=captain_belt_showLight block="Show light belt"
     export function captain_belt_showLight() {
         lhRGBLightBelt.show();
     }
@@ -433,7 +423,7 @@ namespace captain {
     /**
      * Clear the color of the colored lights and turn off the lights.
      */
-    //% weight=64 blockGap=50 blockId=captain_belt_clearLight block="Clear light belt"
+    //% weight=3 blockGap=50 blockId=captain_belt_clearLight block="Clear light belt"
     export function captain_belt_clearLight() {
         lhRGBLightBelt.clear();
     }
@@ -441,7 +431,7 @@ namespace captain {
     /**
      * Display the colored lights, and set the color of the colored lights to match the use. After setting the color of the colored lights, the color of the lights must be displayed.
      */
-    //% weight=65 blockId=captain_showLight block="Show light"
+    //% weight=8 blockId=captain_showLight block="Show light"
     export function captain_showLight() {
         lhRGBLight.show();
     }
@@ -449,9 +439,21 @@ namespace captain {
     /**
      * Clear the color of the colored lights and turn off the lights.
      */
-    //% weight=64 blockGap=50 blockId=captain_clearLight block="Clear light"
+    //% weight=7 blockGap=50 blockId=captain_clearLight block="Clear light"
     export function captain_clearLight() {
         lhRGBLight.clear();
+    }
+
+    
+
+    /**
+         * Set the brightness of the strip. This flag only applies to future operation.
+         * @param brightness a measure of LED brightness in 0-255. eg: 255
+    */
+    //% blockId="captain_setBrightness" block="set brightness %brightness"
+    //% weight=10
+    export function captain_setBrightness(brightness: number): void {
+        lhRGBLight.setBrightness(brightness);
     }
 
 	
@@ -893,7 +895,7 @@ namespace captain {
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     }
 
-    //% weight=80 blockId=captain_setCarGo block="Set|type to %type|speed to speed"
+    //% weight=1 blockId=captain_setCarGo block="Set|type to %type|speed to speed"
     export function captain_setCarGo(type: captain_CarRunCmdType, speed: number) {
 
         switch (type) { 
@@ -935,7 +937,7 @@ namespace captain {
     /**
      * Set the color of the colored lights, after finished the setting please perform  the display of colored lights.
      */
-    //% weight=67 blockId=captain_setPixelRGB block="Set|%lightoffset|color to %rgb"
+    //% weight=9 blockId=captain_setPixelRGB block="Set|%lightoffset|color to %rgb"
     export function captain_setPixelRGB(lightoffset: CaptainLights, rgb: CaptainRGBColors) {
         lhRGBLight.setPixelColor(lightoffset, rgb);
     }
@@ -943,7 +945,7 @@ namespace captain {
     /**
 	 *  Color sensor return the color.
 	 */
-    //% weight=86 blockId=captain_matchCurrentColor block="Current color %rgb"
+    //% weight=2 blockId=captain_matchCurrentColor block="Current color %rgb"
     export function captain_matchCurrentColor(color: CaptainTestColors): boolean {
 
         let c = i2cread(APDS9960_CDATAL) + i2cread(APDS9960_CDATAH) * 256;
