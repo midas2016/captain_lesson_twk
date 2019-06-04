@@ -418,6 +418,11 @@ namespace captain {
         if(lhRGBLightBelt)lhRGBLightBelt.setBrightness(brightness);
     }
 
+    //% weight=5 blockId=startbit_belt_setPixelRGBArgs block="Set|%lightoffset|red to %red|green to %green|blue to %blue"
+    export function startbit_belt_setPixelRGBArgs(lightoffset: CaptainLightsBelt, red: number, green: number, blue: number) {
+        lhRGBLightBelt.setBeltPixelColorRGB(lightoffset, red, green, blue );
+    }
+
 
         /**
      * Display the colored lights, and set the color of the colored lights to match the use. After setting the color of the colored lights, the color of the lights must be displayed.
