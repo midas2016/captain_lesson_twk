@@ -418,8 +418,8 @@ namespace captain {
         if(lhRGBLightBelt)lhRGBLightBelt.setBrightness(brightness);
     }
 
-    //% weight=5 blockId=startbit_belt_setPixelRGBArgs block="Set|%lightoffset|red to %red|green to %green|blue to %blue"
-    export function startbit_belt_setPixelRGBArgs(lightoffset: CaptainLightsBelt, red: number, green: number, blue: number) {
+    //% weight=5 blockId=captain_belt_setPixelRGBArgs block="Set|%lightoffset|red to %red|green to %green|blue to %blue"
+    export function captain_belt_setPixelRGBArgs(lightoffset: CaptainLightsBelt, red: number, green: number, blue: number) {
         lhRGBLightBelt.setBeltPixelColorRGB(lightoffset, red, green, blue );
     }
 
